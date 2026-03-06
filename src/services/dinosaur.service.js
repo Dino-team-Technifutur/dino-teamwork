@@ -5,6 +5,17 @@ const dinosaurService = {
     getAll: async () => {
         return await db.Dinosaur.findAll();
     },
+    create: async(data) => {
+        const existingDinosaur = await db.Dinosaur.findOne
+        ({
+            where:{
+                name: data.name
+            },
+            })
+            if (existingDinosaur){
+                throw new InvalidDinosaurError();
+            }  
+    },
   delete : async (dinosaurId) => {
     const dinosaur = await db.Dinosaur.findByPk(dinosaurId);
     if (!dinosaur) {
