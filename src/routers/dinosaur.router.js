@@ -7,7 +7,7 @@ const dinosaurRouter = Router();
 
 dinosaurRouter.get("/", dinosaurController.getAll);
 dinosaurRouter.post(
-	"/",
+	"/create/",
 	queryValidator(createValidator),
 	dinosaurController.create,
 );
