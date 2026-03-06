@@ -4,8 +4,8 @@ import sequelize from "../config.js";
 const Zone = sequelize.define("Zone", {
 	id: {
 		type: DataTypes.INTEGER,
-		autoIncement: true,
 		primaryKey: true,
+		autoIncrement: true,
 	},
 	name: {
 		type: DataTypes.STRING,
