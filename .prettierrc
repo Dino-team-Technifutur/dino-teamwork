@@ -2,6 +2,7 @@
 	"arrowParens": "avoid",
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"tabWidth": 2,
 =======
 	"tabWidth": 4,
@@ -9,6 +10,9 @@
 =======
 	"tabWidth": 2,
 >>>>>>> f9c0a4a ([FIX] Prettier tab 2)
+=======
+	"tabWidth": 4,
+>>>>>>> 030a506 ([ADD] Prettier)
 	"useTabs": true,
 	"trailingComma": "all",
 	"bracketSpacing": true,
