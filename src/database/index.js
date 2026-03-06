@@ -25,7 +25,7 @@ Species.belongsToMany(Zone, {
   as: 'Zone',
 });
 
-export {
+
 Fossil.belongsTo(Dinosaur, {
   as: "dinosaur",
   foreignKey: {
