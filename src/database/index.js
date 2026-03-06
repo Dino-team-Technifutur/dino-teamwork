@@ -4,6 +4,16 @@ import Fossil from './entities/fossil.entity.js'
 import Species from './entities/species.entity.js';
 import Zone from './entities/zone.entity.js';
 
+Dinosaur.hasOne(Species, {
+  foreignKey: 'dinosaurId',
+  as: 'species'
+})
+
+Dinosaur.hasMany(Fossil, {
+  foreignKey: 'dinosaurId',
+  as: 'fossils'
+})
+
 
 
 export {
