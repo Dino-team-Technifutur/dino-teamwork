@@ -7,11 +7,11 @@ import morgan from 'morgan';
 import { errorHandler } from './middlewares/error.middleware.js';
 import { authentification } from './middlewares/auth.middleware.js';
 
-import db from './database/index.js';
+// import db from './database/index.js';
 import router from './routers/index.js';
 
 const { APP_PORT } = process.env;
-await db.sequelize.authenticate();
+// await db.sequelize.authenticate();
 
 const app = express();
 
