@@ -1,6 +1,10 @@
 {
 	"arrowParens": "avoid",
+<<<<<<< HEAD
 	"tabWidth": 2,
+=======
+	"tabWidth": 4,
+>>>>>>> 030a506 ([ADD] Prettier)
 	"useTabs": true,
 	"trailingComma": "all",
 	"bracketSpacing": true,
