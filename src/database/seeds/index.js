@@ -1,11 +1,8 @@
-import 'console-separator';
-import 'dotenv/config';
-import db from '../index.js';
-import { tournamentData } from './tournament.seed.js';
-import { categoryData } from './category.seed.js';
-import { userData } from './user.seed.js';
-import { tournamentCategoriesData } from './tournamentCategories.seed.js';
-import { Op } from 'sequelize';
+import "console-separator";
+import "dotenv/config";
+import db from "../index.js";
+import { speciesData } from "./species.seed.js";
+import { zoneData } from "./zone.seed.js";
 
 async function runSeed() {
 	try {
@@ -13,26 +10,10 @@ async function runSeed() {
 		console.alog(`Supabase connexion established`);
 		await db.sequelize.sync({ force: true });
 
-		await db.User.bulkCreate(userData);
-		await db.Category.bulkCreate(categoryData);
-		await db.Tournament.bulkCreate(tournamentData);
-		await db.sequelize.models.Tournament_Categories.bulkCreate(tournamentCategoriesData);
+		await db.Species.bulkCreate(speciesData);
+		await db.Zone.bulkCreate(zoneData);
 
-		const allUsers = await db.User.findAll({
-			where: {
-				pseudo: {
-					[Op.ne]: 'MisterCheckMate',
-				},
-			},
-		});
-
-		const tournamentsUsersData = [];
-		for (const e of allUsers) {
-			tournamentsUsersData.push({ userId: e.id, tournamentId: 7 });
-		}
-		await db.sequelize.models.Users_Tournaments.bulkCreate(tournamentsUsersData);
-
-		console.ilog('The seeds are all planted');
+		console.alog("The seeds are all planted");
 	} catch (error) {
 		console.elog(error);
 	} finally {
