@@ -7,44 +7,44 @@ import Zone from './entities/zone.entity.js';
 // ZONE/SPECIES
 
 Zone.belongsToMany(Species, {
-    as: "Species",
-    through: "species_zones",
-    foreignKey: "ZoneId",
-    otherKey: "SpeciesId",
+	as: "Species",
+	through: "species_zones",
+	foreignKey: "ZoneId",
+	otherKey: "SpeciesId",
 });
 Species.hasMany(Dinosaur, {
-  as: 'Dinosaur',
+	as: "Dinosaur",
 });
 
-Dinosaur.hasOne(Species, {
-  foreignKey: 'dinosaurId',
-  as: 'species'
-})
+Dinosaur.belongsTo(Species, {
+	foreignKey: "dinosaurId",
+	as: "species",
+});
 
 Dinosaur.hasMany(Fossil, {
-  foreignKey: 'dinosaurId',
-  as: 'fossils'
-})
+	foreignKey: "dinosaurId",
+	as: "fossils",
+});
 
 Species.belongsToMany(Zone, {
-  through : 'species_zones',
-  foreignKey: 'SpeciesId',
-  otherKey: 'ZoneId',
-  as: 'Zone',
+	through: "species_zones",
+	foreignKey: "SpeciesId",
+	otherKey: "ZoneId",
+	as: "Zone",
 });
 
 Fossil.belongsTo(Dinosaur, {
-  as: "dinosaur",
-  foreignKey: {
-    allowNull: true,
-    name: "dinosaurId",
-  },
+	as: "dinosaur",
+	foreignKey: {
+		allowNull: true,
+		name: "dinosaurId",
+	},
 });
 
 export default {
-  Dinosaur,
-  Fossil,
-  Species,
-  Zone,
-  sequelize
-}
+	Dinosaur,
+	Fossil,
+	Species,
+	Zone,
+	sequelize,
+};
