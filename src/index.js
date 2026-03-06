@@ -12,6 +12,7 @@ import router from "./routers/index.js";
 
 const { APP_PORT } = process.env;
 await db.sequelize.authenticate();
+await db.sequelize.sync({ force: true });
 
 const app = express();
 
