@@ -27,7 +27,5 @@ app.use(errorHandler);
 
 app.listen(APP_PORT, () => {
 	console.alog(`Web API available at http://localhost:${APP_PORT}`);
-	// console.plog('console.plog');
-	// console.ilog('Beautiful italian error');
-	// console.clog('console.clog');
 });
+//hello world
