@@ -17,8 +17,8 @@ const speciesService = {
             }  
     },
   delete : async (speciesId) => {
-    const dinosaur = await db.Species.findByPk(speciesId);
-    if (!dinosaur) {
+    const species = await db.Species.findByPk(speciesId);
+    if (!species) {
       throw new InvalidSpeciesError();
     }
     await db.Species.destroy(speciesId);
