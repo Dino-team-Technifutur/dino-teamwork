@@ -1,4 +1,4 @@
-import 'console-separator';
+//import 'console-separator';
 
 import 'dotenv/config';
 import express from 'express';
