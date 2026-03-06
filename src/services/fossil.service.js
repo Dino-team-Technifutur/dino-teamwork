@@ -13,7 +13,7 @@ const fossilService = {
             },
             })
             if (existingfossil){
-                throw new InvalidfossilError();
+                throw new InvalidFossilError();
             }  
     },
   delete : async (fossilId) => {
