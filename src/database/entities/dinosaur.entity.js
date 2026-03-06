@@ -26,3 +26,5 @@ const Dinosaur = sequelize.define("Dinosaur", {
 		},
 	},
 });
+
+export default Dinosaur;
